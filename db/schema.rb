@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_104837) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_12_105010) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -45,6 +45,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_104837) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "result_id", null: false
+    t.integer "plan_id", null: false
+    t.integer "treatment_id", null: false
+    t.integer "user_id", null: false
+    t.integer "provider_id", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_reviews_on_plan_id"
+    t.index ["provider_id"], name: "index_reviews_on_provider_id"
+    t.index ["result_id"], name: "index_reviews_on_result_id"
+    t.index ["treatment_id"], name: "index_reviews_on_treatment_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "treatments", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -73,5 +89,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_104837) do
   end
 
   add_foreign_key "plans", "companies"
+  add_foreign_key "reviews", "plans"
+  add_foreign_key "reviews", "providers"
+  add_foreign_key "reviews", "results"
+  add_foreign_key "reviews", "treatments"
+  add_foreign_key "reviews", "users"
   add_foreign_key "users", "user_types"
 end

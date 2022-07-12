@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  result: one
+  plan: one
+  treatment: one
+  user: one
+  provider: one
+  description: MyText
+
+two:
+  result: two
+  plan: two
+  treatment: two
+  user: two
+  provider: two
+  description: MyText
