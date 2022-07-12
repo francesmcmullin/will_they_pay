@@ -15,7 +15,7 @@
 
 <li>average coverage: <%= sprintf('%.2f', average_coverage * 100) %>%</li>
 
-<li>average wait for reimbursement: <%= average_wait_for_reimbursement %> days</li>
+<li>average wait for reimbursement: <%= average_wait_for_reimbursement.round %> days</li>
 
 <li>average wait for treatment: <%= average_wait_for_treatment.round %> days</li>
 </ul>
