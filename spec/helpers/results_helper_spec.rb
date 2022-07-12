@@ -18,6 +18,13 @@ RSpec.describe ResultsHelper, type: :helper do
       @results = Result.all
       expect(helper.percent_of_denials).to eq(0)
     end
+
+    it 'returns 0.5 if there is exactly one non-denial result and one denial result' do
+      Result.create!(percent_covered: 0.7)
+      Result.create!(percent_covered: 0.0)
+      @results = Result.all
+      expect(helper.percent_of_denials).to eq(0.5)
+    end
   end
 
   describe '#rate_used' do

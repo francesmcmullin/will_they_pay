@@ -61,6 +61,7 @@ class PlansController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_plan
       @plan = Plan.find(params[:id])
+      @results = Result.where(id: @plan.reviews.pluck(:result_id))
     end
 
     # Only allow a list of trusted parameters through.

@@ -8,3 +8,14 @@
 
   <%= button_to "Destroy this plan", @plan, method: :delete %>
 </div>
+<ul>
+<li>percent of denials: <%= sprintf('%.2f', percent_of_denials * 100) %>%</li>
+
+<li>rate used: <%= sprintf('%.2f', rate_used * 100) %>%</li>
+
+<li>average coverage: <%= sprintf('%.2f', average_coverage * 100) %>%</li>
+
+<li>average wait for reimbursement: <%= average_wait_for_reimbursement %> days</li>
+
+<li>average wait for treatment: <%= average_wait_for_treatment.round %> days</li>
+</ul>

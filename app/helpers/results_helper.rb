@@ -2,13 +2,13 @@ module ResultsHelper
   def percent_of_denials
     return 0 if @results.empty?
 
-    @results.where(percent_covered: 0).count / @results.count
+    @results.where(percent_covered: 0).count * 1.0 / @results.count
   end
 
   def rate_used
     return 0 if @results.empty?
 
-    @results.where(days_waited: 0).count / @results.count
+    @results.where(days_waited: 0).count * 1.0 / @results.count
   end
 
   def average_coverage
