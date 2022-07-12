@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :treatments
   resources :user_types
   resources :results
-  resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

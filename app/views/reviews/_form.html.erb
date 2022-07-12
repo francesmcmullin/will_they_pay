@@ -12,9 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :result_id, style: "display: block" %>
-    <%= form.text_field :result_id %>
-
+    <%= form.fields_for :result, Result.new do |result_attributes|%>
+      <%= result_attributes.label :percent_covered, "Result percent covered:" %>
+      <%= result_attributes.text_field :percent_covered %>
+      <%= result_attributes.label :days_waited, "Result days waited:" %>
+      <%= result_attributes.text_field :days_waited %>
+    <% end %>
   </div>
 
   <div>
@@ -25,11 +28,6 @@
   <div>
     <%= form.label :treatment_id, style: "display: block" %>
     <%= form.select :treatment_id, options_for_select(Treatment.all.map{|c|[c.name, c.id]}, review.treatment_id) %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div>

@@ -1,27 +1,29 @@
 <div id="<%= dom_id review %>">
   <p>
     <strong>Result:</strong>
-    <%= review.result_id %>
+    <div style="margin-left:3em;">
+    <%= render review.result %>
+    </div>
   </p>
 
   <p>
     <strong>Plan:</strong>
-    <%= review.plan_id %>
+    <%= review.plan.name %>
   </p>
 
   <p>
     <strong>Treatment:</strong>
-    <%= review.treatment_id %>
+    <%= review.treatment.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= review.user_id %>
+    <%= review.user.email %>
   </p>
 
   <p>
     <strong>Provider:</strong>
-    <%= review.provider_id %>
+    <%= review.provider.name %>
   </p>
 
   <p>

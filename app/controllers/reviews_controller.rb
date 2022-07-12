@@ -65,6 +65,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:result_id, :plan_id, :treatment_id, :user_id, :provider_id, :description)
+      params.require(:review).permit(:plan_id, :treatment_id, :provider_id, :description, result_attributes: [:percent_covered, :days_waited]).merge(user: current_user)
     end
 end
