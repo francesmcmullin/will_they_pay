@@ -17,3 +17,8 @@
 body {
   padding: 1em 5em;
 }
+
+ul.nav li {
+  display: inline;
+  margin-right: 2em;
+}

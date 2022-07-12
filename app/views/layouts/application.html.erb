@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InsTracker</title>
+    <title>Will they pay?</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,6 +13,10 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <ul class="nav">
+      <li><%= link_to "Plans", plans_path %></li>
+      <li><%= link_to "Leave a Review", review_path(:new) %></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
