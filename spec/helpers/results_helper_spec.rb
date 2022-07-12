@@ -33,16 +33,16 @@ RSpec.describe ResultsHelper, type: :helper do
       expect(helper.rate_used).to eq(0)
     end
 
-    it 'returns 1 if there is exactly one denial result' do
+    it 'returns 0 if there is exactly one denial result' do
       Result.create!(days_waited: 0)
       @results = Result.all
-      expect(helper.rate_used).to eq(1)
+      expect(helper.rate_used).to eq(0)
     end
 
-    it 'returns 0 if there is exactly one non-denial result' do
+    it 'returns 1 if there is exactly one non-denial result' do
       Result.create!(days_waited: 1)
       @results = Result.all
-      expect(helper.rate_used).to eq(0)
+      expect(helper.rate_used).to eq(1)
     end
   end
 
