@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_103237) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_12_103929) do
   create_table "results", force: :cascade do |t|
     t.float "percent_covered"
     t.integer "days_waited"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,8 +32,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_103237) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_type_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_type_id"], name: "index_users_on_user_type_id"
   end
 
+  add_foreign_key "users", "user_types"
 end
