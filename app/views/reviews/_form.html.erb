@@ -15,8 +15,10 @@
     <%= form.fields_for :result, Result.new do |result_attributes|%>
       <%= result_attributes.label :percent_covered, "Result percent covered:" %>
       <%= result_attributes.text_field :percent_covered %>
-      <%= result_attributes.label :days_waited, "Result days waited:" %>
+      <%= result_attributes.label :days_waited, "Result days waited for treatment:" %>
       <%= result_attributes.text_field :days_waited %>
+      <%= result_attributes.label :days_waited_for_reimbursement, "Result days waited for reimbursement:" %>
+      <%= result_attributes.text_field :days_waited_for_reimbursement %>
     <% end %>
   </div>
 

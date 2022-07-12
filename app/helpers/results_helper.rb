@@ -8,7 +8,7 @@ module ResultsHelper
   def rate_used
     return 0 if @results.empty?
 
-    @results.where(days_waited: 0).count * 1.0 / @results.count
+    @results.where.not(days_waited: 0).count * 1.0 / @results.count
   end
 
   def average_coverage
