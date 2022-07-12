@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_105010) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_12_111239) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_105010) do
     t.integer "days_waited"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "days_waited_for_reimbursement"
   end
 
   create_table "reviews", force: :cascade do |t|
