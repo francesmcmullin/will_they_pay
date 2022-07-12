@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  percent_covered: 1.5
+  days_waited: 1
+
+two:
+  percent_covered: 1.5
+  days_waited: 1
