@@ -4,10 +4,12 @@
 
 <div id="plans">
   <% @plans.each do |plan| %>
-    <%= render plan %>
-    <p>
-      <%= link_to "Show this plan", plan %>
-    </p>
+    <div>
+      <%= render plan %>
+      <p>
+        <%= link_to "Show this plan", plan %>
+      </p>
+    </div>
   <% end %>
 </div>
 

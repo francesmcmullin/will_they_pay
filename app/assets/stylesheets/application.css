@@ -22,3 +22,16 @@ ul.nav li {
   display: inline;
   margin-right: 2em;
 }
+
+#plans {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+}
+
+#plans > div {
+  width: 45%;
+  margin: 0.5em 1em;
+  padding: 0.5em;
+  border: 1px solid gray;
+}
