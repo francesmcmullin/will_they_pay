@@ -14,16 +14,17 @@
   <div>
     <%= form.label :result_id, style: "display: block" %>
     <%= form.text_field :result_id %>
+
   </div>
 
   <div>
     <%= form.label :plan_id, style: "display: block" %>
-    <%= form.text_field :plan_id %>
+    <%= form.select :plan_id, options_for_select(Plan.all.map{|c|[c.name, c.id]}, review.plan_id) %>
   </div>
 
   <div>
     <%= form.label :treatment_id, style: "display: block" %>
-    <%= form.text_field :treatment_id %>
+    <%= form.select :treatment_id, options_for_select(Treatment.all.map{|c|[c.name, c.id]}, review.treatment_id) %>
   </div>
 
   <div>
@@ -33,7 +34,7 @@
 
   <div>
     <%= form.label :provider_id, style: "display: block" %>
-    <%= form.text_field :provider_id %>
+    <%= form.select :provider_id, options_for_select(Provider.all.map{|c|[c.name, c.id]}, review.provider_id) %>
   </div>
 
   <div>

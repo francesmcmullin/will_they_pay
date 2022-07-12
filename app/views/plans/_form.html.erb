@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :company_id, style: "display: block" %>
-    <%= form.text_field :company_id %>
+    <%= form.select :company_id, options_for_select(Company.all.map{|c|[c.name, c.id]}, plan.company_id) %>
   </div>
 
   <div>
