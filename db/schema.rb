@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_12_104303) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_12_104453) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.text "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "area"
+    t.integer "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_plans_on_company_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -53,5 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_104303) do
     t.index ["user_type_id"], name: "index_users_on_user_type_id"
   end
 
+  add_foreign_key "plans", "companies"
   add_foreign_key "users", "user_types"
 end
